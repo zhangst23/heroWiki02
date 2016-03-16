@@ -59,11 +59,21 @@ rails g scaffold nodes name:string
 gem: carrierwave mini_magick
 rails g migtation add_image_to_hero image:string
 ***
+rails g migration add_node_id_to_hero node_name:string
+rails g migration add_node_name_to_hero node_name:string
+***
+gem 'redcarpet', '~> 3.0.0'
+gem 'kaminari', '~> 0.15.1'
+***
+rails g model tag name
+rails g model tagging tag:belongs_to article:belongs_to
 
+***
+rails g migration add_video_list_to_hero video_list:text
+rails g migration add_article_list_to_hero article_list:text
+rails g migration add_success_list_to_hero successful_list:text
 
-
-
-
+***
 
 
 
