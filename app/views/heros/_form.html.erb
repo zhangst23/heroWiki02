@@ -1,0 +1,54 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+    <%= simple_form_for @hero do |f| %>
+      <% if @hero.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@hero.errors.count, "error") %> prohibited this hero from being saved:</h2>
+
+          <ul>
+          <% @hero.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :姓名 %>
+        <%= f.input :name %>
+      </div>
+      <div class="field">
+        <%= f.label :头像 %>
+        <%= f.input :image, accept: "image/jpge, image/gif, image/png" %>
+      </div>
+      <div class="field">
+        <%= f.label :出生日期 %>
+        <%= f.input :birthday %>
+      </div>
+
+      <div class="field">
+        <%= f.label :毕业学校 %>
+        <%= f.input :school %>
+      </div>
+      <div class="field">
+        <%= f.label :标签, "多个标签请用逗号(英文输入法下)隔开" %>
+        <%= f.input :tag_list %>
+      </div>
+      <div class="field">
+        <%= f.label :一句话描述 %>
+        <%= f.input :description %>
+      </div>
+      <div class="field">
+        <%= f.label :星座血型身高  %>
+        <%= f.input :constellation %>
+      </div>
+      <div class="actions">
+        <%= f.button :submit, "保存", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
