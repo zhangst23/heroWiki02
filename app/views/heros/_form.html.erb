@@ -14,35 +14,50 @@
           </ul>
         </div>
       <% end %>
-
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="field">
+              <%= f.input :name, placeholder: "姓名" %>
+            </div>
+            <div class="field">
+              <%= f.label :头像 %>
+              <%= f.input :image, accept: "image/jpge, image/gif, image/png" %>
+            </div>
+            <div class="field">
+              <%= f.input :birthday, placeholder: "出生日期" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="field">
+              <%= f.input :school, placeholder: "毕业学校" %>
+            </div>
+            <div class="field">
+              <%= f.input :tag_list, placeholder: "标签-多个标签请用逗号(英文输入法下)隔开" %>
+            </div>
+            <div class="field">
+              <%= f.input :constellation, placeholder: "星座|血型|身高" %>
+            </div>
+          </div>
+        </div>
+      </div>
+            
       <div class="field">
-        <%= f.label :姓名 %>
-        <%= f.input :name %>
+        <%= f.label :简要描述 %>
+        <%= f.text_area :description, class: "form-control", rows: "6", tabindex: "1" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :大神视频链接 %>
+        <%= f.text_area :video_list, class: "form-control", rows: "6", tabindex: "1" %>
       </div>
       <div class="field">
-        <%= f.label :头像 %>
-        <%= f.input :image, accept: "image/jpge, image/gif, image/png" %>
+        <%= f.label :文字介绍链接 %>
+        <%= f.text_area :article_list, class: "form-control", rows: "6", tabindex: "1" %>       
       </div>
       <div class="field">
-        <%= f.label :出生日期 %>
-        <%= f.input :birthday %>
-      </div>
-
-      <div class="field">
-        <%= f.label :毕业学校 %>
-        <%= f.input :school %>
-      </div>
-      <div class="field">
-        <%= f.label :标签, "多个标签请用逗号(英文输入法下)隔开" %>
-        <%= f.input :tag_list %>
-      </div>
-      <div class="field">
-        <%= f.label :一句话描述 %>
-        <%= f.input :description %>
-      </div>
-      <div class="field">
-        <%= f.label :星座血型身高  %>
-        <%= f.input :constellation %>
+        <%= f.label :成就链接 %>
+        <%= f.text_area :successful_list, class: "form-control", rows: "6", tabindex: "1" %>        
       </div>
       <div class="actions">
         <%= f.button :submit, "保存", class: "btn btn-primary" %>

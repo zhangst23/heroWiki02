@@ -45,16 +45,20 @@
       <div class="col-md-10">       
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active hero_video"><a href="#hero_video" aria-controls="hero_video" role="tab" data-toggle="tab">大神视频</a></li>
-          <li role="presentation" class="hero_hero_article"><a href="#hero_hero_picture" aria-controls="hero_hero_picture" role="tab" data-toggle="tab">图片</a></li>
-          <li role="presentation" class="video_picture"><a href="#video_article" aria-controls="hero_article" role="tab" data-toggle="tab">文字</a></li>
-          <li role="presentation" class="hero_succuss"><a href="#hero_succuss" aria-controls="hero_succuss" role="tab" data-toggle="tab">成就</a></li>
+          <li role="presentation" class="active video_list"><a href="#video_list" aria-controls="video_list" role="tab" data-toggle="tab">大神视频</a></li>
+
+          <li role="presentation" class="hero_article_list"><a href="#hero_hero_picture" aria-controls="hero_hero_picture" role="tab" data-toggle="tab">图片</a></li>
+
+          <li role="presentation" class="video_picture"><a href="#article_list" aria-controls="article_list" role="tab" data-toggle="tab">文字</a></li>
+
+          <li role="presentation" class="successful_list"><a href="#successful_list" aria-controls="successful_list" role="tab" data-toggle="tab">成就</a></li>
+
           <li role="presentation" class="hero_comment"><a href="#hero_comment" aria-controls="hero_comment" role="tab" data-toggle="tab">评论区</a></li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane fade active" id="hero_video">
+          <div role="tabpanel" class="tab-pane active" id="video_list">
             <br>
 
             <div class="panel panel-default">
@@ -63,7 +67,7 @@
               </div>
               <div class="panel-body">
                 <article>
-                  markdown List
+                  <%= raw @hero.video_list %>
                 </article>
               </div>
             </div>
@@ -71,33 +75,33 @@
 
           </div>
 
-          <div role="tabpanel" class="tab-pane fade" id="hero_hero_picture">
+          <div role="tabpanel" class="tab-pane" id="hero_picture">
             <br>
             #
           </div>
 
-          <div role="tabpanel" class="tab-pane fade" id="hero_article">
+          <div role="tabpanel" class="tab-pane" id="article_list">
             <br>
             <div class="panel panel-default">
               <div class="panel-heading">清单</div>
               <div class="panel-body">
-                文字
+                <%= @hero.article_list %>
               </div>
             </div>
 
           </div>
 
-          <div role="tabpanel" class="tab-pane fade" id="hero_succuss">
+          <div role="tabpanel" class="tab-pane" id="successful_list">
             <br>
             <div class="panel panel-default">
               <div class="panel-heading">清单</div>
               <div class="panel-body">
-                Panel content
+                <%= @hero.successful_list %>
               </div>
             </div>
           </div>
 
-          <div role="tabpanel" class="tab-pane fade" id="hero_comment">
+          <div role="tabpanel" class="tab-pane" id="hero_comment">
             <br>
             <ul class="media-list">
               <li class="media">
@@ -121,6 +125,13 @@
 
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
 
-<%= link_to 'Edit', edit_hero_path(@hero) %> |
-<%= link_to 'Back', heros_path %>
+      <%= link_to '修改', edit_hero_path(@hero) %> |
+      <%= link_to '返回首页', heros_path %>
+            
+    </div>
+  </div>
+</div>
