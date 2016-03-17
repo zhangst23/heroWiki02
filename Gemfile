@@ -38,8 +38,8 @@ gem 'redcarpet', '~> 3.0.0'
 
 gem 'rails_admin'
 
-
-
+gem 'devise'
+gem 'cancancan'
 
 
 # Use ActiveModel has_secure_password
